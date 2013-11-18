@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
  	def home
  	end
+
+ 	def choose_flow
+ 		
+ 	end
 end
