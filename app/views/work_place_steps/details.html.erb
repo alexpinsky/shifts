@@ -1,0 +1,12 @@
+<div id="place_details_wrapper" class="row offset2 span4">
+<h2>Details</h2>
+<%= semantic_form_for @work_place, url: wizard_path, :method => :put do |f| %>
+  <%= f.inputs do %>
+  	<%= f.input :name, label: false, placeholder: "Name" %>
+  	<%= hidden_field_tag :work_place_id, @work_place.id %>
+  <% end %>
+  <%= f.actions do %>
+  	<%= f.action :submit, label: "Continue >>" , button_html: { class: "btn btn-success" } %>
+  <% end %>
+<% end %>
+</div>

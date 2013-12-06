@@ -1,0 +1,13 @@
+<div id="place_roles_wrapper" class="row offset2 span4">
+<h2>Roles</h2>
+<%= semantic_form_for @role, url: wizard_path, :method => :put do |f| %>
+  <%= f.inputs do %>
+  	<%= f.input :name, label: false, placeholder: "Name" %>
+  	<%= hidden_field_tag :work_place_id, @work_place.id %>
+  <% end %>
+  <%= f.actions do %>
+  	<%= f.action :submit, label: "Add another" , button_html: { class: "btn btn-warning" } %>
+  	<%= f.action :submit, label: "Done" , button_html: { class: "btn btn-success" } %>
+  <% end %>
+<% end %>
+</div>

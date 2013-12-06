@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WorkPlace::Application.load_tasks
+Shifts::Application.load_tasks
