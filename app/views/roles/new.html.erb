@@ -1,0 +1,10 @@
+<div id="roles_form" class="span4">
+	<%= semantic_form_for [@work_place, @role] do |f| %>
+		<%= f.inputs do %>
+			<%= f.input :name, label: false, placeholder: 'Role name' %>
+		<% end %>
+		<%= f.actions do %>
+			<%= f.action :submit, label: 'Create' %>
+		<% end %>
+	<% end %>
+</div>

@@ -1,8 +1,12 @@
 class Role < ActiveRecord::Base
-	attr_accessible :name
-
 	belongs_to :work_place
 	has_many :shifts
+	has_many :employments
+	has_many :users, through: :employments
 
 	validates_presence_of :name
+
+	attr_accessible :name
+
+	scope	:by_work_place, lambda { |work_place| where("roles.work_place_id = ?", work_place.id) }
 end

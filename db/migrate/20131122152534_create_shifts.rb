@@ -5,9 +5,6 @@ class CreateShifts < ActiveRecord::Migration
       t.datetime  :start_time
       t.datetime  :end_time
       t.integer :role_id
-      t.string :type
-      t.integer :shiftable_id
-      t.string :shiftable_type
 
       t.timestamps
     end

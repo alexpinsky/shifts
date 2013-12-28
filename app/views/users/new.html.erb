@@ -1,0 +1,21 @@
+<div id="user_form" class="offset3 span8">
+	<div id="user_details" class="span3">
+	<h3>Employe Details</h3>
+	<%= semantic_form_for [@work_place, @user] do |f| %>
+		<%= f.inputs do %>
+			<%= f.input :first_name, label: false, placeholder: 'first name' %>
+			<%= f.input :last_name, label: false, placeholder: 'last name' %>
+			<%= f.input :email, label: false, placeholder: 'email' %>
+	</div>
+	<div id="user_roles" class="span3">
+	<h3>Employe Roles</h3>
+			<%= f.input :roles, as: :check_boxes, collection: @roles, label: false %>
+	</div>
+		<% end %>
+	<div id="user_actions" class="span6">
+		<%= f.actions do %>
+			<%= f.action :submit, label: 'Create', button_html: { class: "btn btn-success" } %>
+		<% end %>
+	<% end %>
+	</div>
+</div>

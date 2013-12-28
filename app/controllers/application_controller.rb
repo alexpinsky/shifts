@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
   	choose_flow_path
   end
+
+  def set_work_place
+  	@work_place = WorkPlace.find params[:work_place_id]
+  end
 end

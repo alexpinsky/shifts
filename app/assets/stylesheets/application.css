@@ -10,7 +10,6 @@
  *
  *= require formtastic-bootstrap
  *= require formtastic
- *= pages
  *= require_self
  *= require_tree .
  */

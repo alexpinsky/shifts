@@ -1,4 +1,6 @@
 class Shift < ActiveRecord::Base
 	belongs_to :role
-	# belongs_to
+	has_many :users, through: :role
+
+	attr_accessible :role_id
 end

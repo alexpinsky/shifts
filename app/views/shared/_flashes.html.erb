@@ -1,0 +1,17 @@
+<div id="flash"> 
+  <% flash.keys.each do |k| %> 
+  	<% if flash[k].is_a? String %>
+  		<div class="alert alert-<%= k %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[k] %>
+      </div>
+  	<% else %>
+	    <% flash[k].each do |msg| %>
+	      <div class="alert alert-<%= k %>">
+	        <button type="button" class="close" data-dismiss="alert">&times;</button>
+	        <%= msg %>
+	      </div>
+	    <% end %>   
+  	<% end %>
+  <% end %>   
+</div>

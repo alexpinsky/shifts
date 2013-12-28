@@ -9,10 +9,4 @@ class WorkPlaceStepsController < ApplicationController
   def roles
   	
   end
-  
-  private 
-
-  def set_work_place
-  	@work_place = params[:work_place_id].blank? ? WorkPlace.new : params[:work_place_id]
-  end
 end
