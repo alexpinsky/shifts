@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  initTimePickers();
   var date = new Date();
   var d = date.getDate();
   var m = date.getMonth();
@@ -57,6 +58,7 @@ $(document).ready(function() {
           var new_shift_modal = $("#new_shift");
           new_shift_modal.find(".modal-body").html(html_response);
           new_shift_modal.modal();
+          // clear the current calender - fix for calendar duplication
           $('#calendar').html('');
         }
       });

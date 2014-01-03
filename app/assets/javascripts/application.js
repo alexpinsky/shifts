@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
-//= pages
 //= require_tree .
+
+function initTimePickers() {
+  $('.datetimepicker').each(function() {
+    $(this).datetimepicker({dateFormat: 'yy-mm-dd', showOptions: { direction: "down" }});
+  });
+}

@@ -2,14 +2,21 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 
-
+# DB
 gem 'pg'
 gem 'hirb'
-gem 'devise'
+
+# UI
 gem 'formtastic'
 gem 'formtastic-bootstrap'
-gem 'geocoder'
+
+# Infrastructure
 gem 'rabl'
+gem 'jquery-rails'
+
+# Management
+gem 'geocoder'
+gem 'devise'
 
 
 # Gems used only for assets and not required
@@ -19,11 +26,11 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+	gem 'jquery-ui-rails'
 end
 
 group :development do
 	gem 'pry'
 end
 
-gem 'jquery-rails'
 
