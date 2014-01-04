@@ -2,7 +2,7 @@ class RolesController < ApplicationController
 	before_filter :set_workplace
 	
 	def index
-		@roles = @workplace.roles
+		@roles = @workplace.roles.includes(:users)
 	end
 
 	def new

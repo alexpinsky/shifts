@@ -1,31 +1,31 @@
-<div>
-	<table class="table table-hover table-striped">
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Roles</th>
-			<th>Email</th>
-			<th>Birthday</th>
-			<th></th>
-			<th></th>
-		</tr>
-		<% @users.each do |user| %>
+<div class="container">
+	<div>
+		<table class="table table-hover table-striped">
 			<tr>
-				<td><%= user.first_name %></td>
-				<td><%= user.last_name %></td>
-				<td>
-					<% user.roles.each do |role| %>
-						<li><%= role.name %></li> 
-					<% end %>	
-				</td>
-				<td><%= user.email %></td>
-				<td><%= user.birthday %></td>
-				<td><%= link_to (raw '<i class="icon-pencil"></i>'), edit_workplace_user_path(@workplace, user) %></td>
-				<td><%= link_to (raw '<i class="icon-trash"></i>'), [@workplace, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Roles</th>
+				<th>Email</th>
+				<th></th>
+				<th></th>
 			</tr>
-		<% end %>
-	</table>
-</div>
-<div>
-	<%= link_to 'New', new_workplace_user_path(@workplace), class: 'btn btn-success' %>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= user.first_name %></td>
+					<td><%= user.last_name %></td>
+					<td>
+						<% user.roles.each do |role| %>
+							<li><%= role.name %></li> 
+						<% end %>	
+					</td>
+					<td><%= user.email %></td>
+					<td><%= link_to (raw '<i class="icon-pencil"></i>'), edit_workplace_user_path(@workplace, user) %></td>
+					<td><%= link_to (raw '<i class="icon-trash"></i>'), [@workplace, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+	<div>
+		<%= link_to 'New', new_workplace_user_path(@workplace), class: 'btn btn-success' %>
+	</div>
 </div>

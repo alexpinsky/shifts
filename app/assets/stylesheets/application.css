@@ -14,3 +14,14 @@
  *= require bootstrap_and_overrides
  *= require_tree .
  */
+ 
+body {
+ 	background-image: url(/assets/retina_wood.png);
+}
+
+#main_container {
+	background-color: white;
+	border-radius: 15px;
+	padding: 30px;
+	height: auto;
+}
