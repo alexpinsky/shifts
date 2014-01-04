@@ -20,12 +20,12 @@
 				</td>
 				<td><%= user.email %></td>
 				<td><%= user.birthday %></td>
-				<td><%= link_to (raw '<i class="icon-pencil"></i>'), edit_work_place_user_path(@work_place, user) %></td>
-				<td><%= link_to (raw '<i class="icon-trash"></i>'), [@work_place, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to (raw '<i class="icon-pencil"></i>'), edit_workplace_user_path(@workplace, user) %></td>
+				<td><%= link_to (raw '<i class="icon-trash"></i>'), [@workplace, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 			</tr>
 		<% end %>
 	</table>
 </div>
 <div>
-	<%= link_to 'New', new_work_place_user_path(@work_place), class: 'btn btn-success' %>
+	<%= link_to 'New', new_workplace_user_path(@workplace), class: 'btn btn-success' %>
 </div>

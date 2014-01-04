@@ -1,0 +1,4 @@
+var new_shift_modal = $("#<%= @container_id %>");
+new_shift_modal.find(".modal-body").html("<%= escape_javascript(render partial: 'shift_form', locals: { workplace: @workplace, shift: @shift }) %>");
+initTimePickers();
+new_shift_modal.modal();

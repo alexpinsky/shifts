@@ -1,24 +1,24 @@
 class UsersController < ApplicationController
-	before_filter :set_work_place
+	before_filter :set_workplace
 
 	def index
-		@users = @work_place.users.includes(:roles).where("roles.work_place_id = ?", @work_place.id)
+		@users = @workplace.users.includes(:roles).where("roles.workplace_id = ?", @workplace.id)
 	end
 
 	def new
-		@user = @work_place.users.new
-		@roles = @work_place.roles
+		@user = @workplace.users.new
+		@roles = @workplace.roles
 	end
 
 	def create
 		role_ids = params[:user][:role_ids].select { |id| id.present? }
-		result = User.create_with_roles(user_params: params[:user].except(:role_ids), role_ids: role_ids, work_place: @work_place)
+		result = User.create_with_roles(user_params: params[:user].except(:role_ids), role_ids: role_ids, workplace: @workplace)
 		if result[:success]
 			flash[:success] = "User created successfully"
-			redirect_to work_place_users_path(@work_place)
+			redirect_to workplace_users_path(@workplace)
 		else
 			@user = result[:user]
-			@roles = @work_place.roles
+			@roles = @workplace.roles
 			flash[:error] = result[:msg]
 			render :new
 		end

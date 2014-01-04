@@ -18,6 +18,9 @@
 
 function initTimePickers() {
   $('.datetimepicker').each(function() {
-    $(this).datetimepicker({dateFormat: 'yy-mm-dd', showOptions: { direction: "down" }});
+    $(this).datetimepicker({
+    	dateFormat: 'yy-mm-dd', 
+    	showOptions: { direction: "down" }
+    });
   });
 }

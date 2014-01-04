@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
 
   has_one :location, as: :locationable
   has_many :employments, dependent: :destroy
-  has_many :work_places, through: :employments
+  has_many :workplaces, through: :employments
   has_many :roles, through: :employments
-  has_many :shifts, through: :roles
+  has_many :shifts, through: :assignments
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday
@@ -20,14 +20,18 @@ class User < ActiveRecord::Base
         user = User.new(args[:user_params])
         user.password = Devise.friendly_token
         user.save!
-        work_place = args[:work_place]
+        workplace = args[:workplace]
         args[:role_ids].each do |id|
-          Employment.create(user: user, work_place: work_place, role_id: id)
+          Employment.create(user: user, workplace: workplace, role_id: id)
         end
       end
     rescue Exception => e
       return {msg: e.message, user: user}      
     end
     {success: true}
+  end
+
+  def display_name
+    "#{self.first_name} #{self.last_name}"
   end
 end

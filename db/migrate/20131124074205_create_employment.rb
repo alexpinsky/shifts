@@ -1,7 +1,7 @@
-class Employment < ActiveRecord::Migration
+class CreateEmployment < ActiveRecord::Migration
   def change
   	create_table :employments do |t|
-      t.integer :work_place_id
+      t.integer :workplace_id
       t.integer :user_id
       t.integer :role_id
 

@@ -1,10 +1,9 @@
 $(document).ready(function() {
-  initTimePickers();
   var date = new Date();
   var d = date.getDate();
   var m = date.getMonth();
   var y = date.getFullYear();
-  var work_place_id = $('#calendar').data("work-place")
+  var workplace_id = $('#calendar').data("work-place")
   
   var calendar = $('#calendar').fullCalendar({
     header: {
@@ -19,7 +18,7 @@ $(document).ready(function() {
     minTime: 8,
     maxTime:16,
     selectHelper: true,
-    resources: /work_places/ + work_place_id + "/roles",
+    resources: /workplaces/ + workplace_id + "/roles",
     events: [
       {
         title: 'Lunch 12.15-14.45',
@@ -51,16 +50,14 @@ $(document).ready(function() {
     ],
     select: function(start, end, allDay, jsEvent, view, resource) {
       $.ajax({
-        url: "/work_places/" + work_place_id + "/shifts/new",
-        data: { role_id: resource.id },
-        datatype: 'html',
-        success: function(html_response){
-          var new_shift_modal = $("#new_shift");
-          new_shift_modal.find(".modal-body").html(html_response);
-          new_shift_modal.modal();
-          // clear the current calender - fix for calendar duplication
-          $('#calendar').html('');
-        }
+        url: "/workplaces/" + workplace_id + "/shifts/new.js",
+        data: { 
+          role_id: resource.id,
+          container_id: "new_shift",
+          start_time: start, 
+          end_time: end
+        },
+        datatype: 'script'
       });
     },
     resourceRender: function(resource, element, view) {

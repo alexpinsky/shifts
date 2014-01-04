@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   	choose_flow_path
   end
 
-  def set_work_place
-  	@work_place = WorkPlace.find params[:work_place_id]
+  def set_workplace
+  	@workplace = Workplace.find params[:workplace_id]
   end
 end

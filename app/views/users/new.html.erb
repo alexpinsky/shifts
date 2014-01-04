@@ -1,7 +1,7 @@
 <div id="user_form" class="offset3 span8">
 	<div id="user_details" class="span3">
 	<h3>Employe Details</h3>
-	<%= semantic_form_for [@work_place, @user] do |f| %>
+	<%= semantic_form_for [@workplace, @user] do |f| %>
 		<%= f.inputs do %>
 			<%= f.input :first_name, label: false, placeholder: 'first name' %>
 			<%= f.input :last_name, label: false, placeholder: 'last name' %>

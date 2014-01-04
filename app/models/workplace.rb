@@ -1,4 +1,4 @@
-class WorkPlace < ActiveRecord::Base
+class Workplace < ActiveRecord::Base
 	attr_accessible :name
 	
 	has_many :roles

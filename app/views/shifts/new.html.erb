@@ -1,14 +1,1 @@
-<div id="shift_form">
-	<h4>New Shift</h4>
-	<%= semantic_form_for [@work_place, @shift] do |f| %>
-		<%= f.inputs do %>
-			<%= f.input :name %>
-			<%= f.input :role, as: :select %>
-			<%= f.input :start_time, as: :string, input_html: { class: "datetimepicker" } %>
-			<%= f.input :end_time, as: :string, input_html: { class: "datetimepicker" } %>
-		<% end %>
-		<%= f.actions do %>
-			<%= f.action :submit, label: 'Create', button_html: { class: "btn btn-success" } %>
-		<% end %>
-	<% end %>
-</div>
+<%= render partial: "shift_form", locals: { workplace: @workplace, shift: @shift } %>

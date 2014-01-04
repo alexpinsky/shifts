@@ -1,10 +1,10 @@
 <div id="roles_form" class="span4">
-	<%= semantic_form_for [@work_place, @role] do |f| %>
+	<%= semantic_form_for [@workplace, @role] do |f| %>
 		<%= f.inputs do %>
 			<%= f.input :name, label: false, placeholder: 'Role name' %>
 		<% end %>
 		<%= f.actions do %>
-			<%= f.action :submit, label: 'Create' %>
+			<%= f.action :submit, label: 'Create', button_html: { class: "btn btn-success" } %>
 		<% end %>
 	<% end %>
 </div>

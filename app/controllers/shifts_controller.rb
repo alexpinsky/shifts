@@ -1,9 +1,9 @@
 class ShiftsController < ApplicationController
-	before_filter :set_work_place
+	before_filter :set_workplace
 
 	def index
-		if @work_place
-			# @shifts = @work_place.roles.shifts
+		if @workplace
+			# @shifts = @workplace.roles.shifts
 			
 		else
 			
@@ -11,7 +11,8 @@ class ShiftsController < ApplicationController
 	end
 
 	def new
-		@shift = @work_place.shifts.new(role_id: params[:role_id])
+		@shift = @workplace.shifts.new(role_id: params[:role_id], start_time: params[:start_time], end_time: params[:end_time])
+		@container_id = params[:container_id]
 	end
 
 	def create

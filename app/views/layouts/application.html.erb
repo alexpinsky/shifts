@@ -21,6 +21,17 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="#">WorkPlace</a>
+        <ul class="nav">
+          <li>
+            <a href="<%= workplace_shifts_path(@workplace) %>"><i class="icon-calendar"></i>Shifts</a>
+          </li>
+          <li>
+            <a href="<%= workplace_users_path(@workplace) %>"><i class="icon-group"></i>Staff</a>
+          </li>
+          <li>
+            <a href="<%= workplace_roles_path(@workplace) %>"><i class="icon-wrench"></i>Roles</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
