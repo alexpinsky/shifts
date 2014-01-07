@@ -1,22 +1,22 @@
 <div id="shift_form">
-	<div id="shift_details" class="span3">
-		<h4><%= shift.role.name %> Shift</h4>
-		<%= semantic_form_for [workplace, shift] do |f| %>
+	<%= semantic_form_for [workplace, shift] do |f| %>
+	<div class="span3">
+		<h4><%= shift.role.try(:name) %> Shift</h4>
 			<%= f.inputs do %>
 				<%= f.input :name %>
-				<%= f.input :role, as: :hidden %>
-				<%= f.input :start_time, as: :string, input_html: { class: "datetimepicker", value: shift.start_time.strftime("%Y-%m-%d %H:%M") } %>
-				<%= f.input :end_time, as: :string, input_html: { class: "datetimepicker", value: shift.end_time.strftime("%Y-%m-%d %H:%M") } %>
+				<%= f.input :role_id, as: :hidden %>
+				<%= f.input :start_time, as: :string, input_html: { class: "datetimepicker", value: shift.start_time.try(:strftime, "%Y-%m-%d %H:%M") } %>
+				<%= f.input :end_time, as: :string, input_html: { class: "datetimepicker", value: shift.end_time.try(:strftime, "%Y-%m-%d %H:%M") } %>
 	</div>
-	<div id="shift_users" class="span2">
+	<div class="span2">
 		<h4>Available Staff</h4>
 			<%= f.input :assigned_users, as: :check_boxes, label: false, collection: shift.available_users, member_label: Proc.new { |u| u.display_name }  %>
 		<% end %>
 	</div>
-</div>
-<div id="shift_actions" class="span5">
+	<div class="span5">
 		<%= f.actions do %>
 			<%= f.action :submit, label: 'Save', button_html: { class: "btn btn-success" } %>
 		<% end %>
-	<% end %>
+	</div>
+<% end %>
 </div>

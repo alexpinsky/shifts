@@ -4,5 +4,5 @@ class Shift < ActiveRecord::Base
 	has_many :available_users, through: :role, source: :users
 	has_many :assigned_users, through: :assignments, source: :user
 
-	attr_accessible :role_id, :start_time, :end_time
+	attr_accessible :role_id, :start_time, :end_time, :name, :assigned_user_ids
 end

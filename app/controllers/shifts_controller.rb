@@ -16,7 +16,14 @@ class ShiftsController < ApplicationController
 	end
 
 	def create
-		
+		@shift = @workplace.shifts.new(params[:shift])
+		if @shift.save
+			flash[:success] = "Shift saved"
+		else
+			flash[:error] = @shift.errors.full_messages
+			# assignment don't get workplace and shift..
+		end
+		redirect_to workplace_shifts_path(@workplace)
 	end
 
 	def edit

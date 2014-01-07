@@ -57,7 +57,7 @@ $(document).ready(function() {
           start_time: start, 
           end_time: end
         },
-        datatype: 'script'
+        datatype: 'script' 
       });
     },
     resourceRender: function(resource, element, view) {
