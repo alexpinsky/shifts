@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
 
   def after_sign_in_path_for(resource)
-  	choose_flow_path
+  	workplace_shifts_path(Workplace.last)
   end
 
   def set_workplace

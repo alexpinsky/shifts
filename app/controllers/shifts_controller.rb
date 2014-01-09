@@ -16,12 +16,12 @@ class ShiftsController < ApplicationController
 	end
 
 	def create
-		@shift = @workplace.shifts.new(params[:shift])
-		if @shift.save
-			flash[:success] = "Shift saved"
+		assigned_user_ids = params[:shift][:assigned_user_ids].select { |id| id.present? }
+		result = Shift.create_with_users(shift_params: params[:shift].except(:assigned_user_ids), assigned_user_ids: assigned_user_ids, workplace: @workplace)
+		if result[:success]
+			flash[:success] = "shift created successfully"
 		else
-			flash[:error] = @shift.errors.full_messages
-			# assignment don't get workplace and shift..
+			flash[:error] = result[:msg]
 		end
 		redirect_to workplace_shifts_path(@workplace)
 	end
