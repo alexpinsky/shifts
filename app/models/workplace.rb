@@ -1,6 +1,4 @@
 class Workplace < ActiveRecord::Base
-	attr_accessible :name
-	
 	has_many :roles
 	has_many :shifts, through: :roles
 	has_many :employments, dependent: :destroy

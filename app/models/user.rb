@@ -11,9 +11,6 @@ class User < ActiveRecord::Base
   has_many :roles, through: :employments
   has_many :shifts, through: :assignments
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday
-
   def self.create_with_roles(args={})
     begin
       ActiveRecord::Base.transaction do

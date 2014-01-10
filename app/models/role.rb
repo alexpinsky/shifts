@@ -6,7 +6,5 @@ class Role < ActiveRecord::Base
 
 	validates_presence_of :name
 
-	attr_accessible :name
-
 	scope	:by_workplace, lambda { |workplace| where("roles.workplace_id = ?", workplace.id) }
 end
