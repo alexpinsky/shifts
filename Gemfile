@@ -28,6 +28,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails', "~> 2.2.8"
 gem 'jquery-ui-rails'
 
+gem "passenger"
+
 group :development do
 	gem 'pry'
 end

@@ -38,6 +38,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.7)
+    daemon_controller (1.1.8)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -74,6 +75,10 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.4)
     orm_adapter (0.5.0)
+    passenger (4.0.33)
+      daemon_controller (>= 1.1.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.4)
@@ -151,6 +156,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   less-rails
+  passenger
   pg
   pry
   rabl
