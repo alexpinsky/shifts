@@ -37,6 +37,7 @@
 body#wedding_body {
 	#invite_wrap {
 		#text {
+			line-height: 0.8;
 			color: white;
 			text-align: center;
 			font-family: handwrite;
@@ -44,11 +45,7 @@ body#wedding_body {
 				font-size: 110px;
 			}
 			p#secondary {
-				margin-top: 50px;
 				font-size: 27px;
-			}
-			#btn_calendar {
-				margin-top: 10px;
 			}
 		}
 	}
