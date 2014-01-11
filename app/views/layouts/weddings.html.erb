@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WorkPlace</title>
+  <title>Ron&Neta</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
@@ -11,19 +11,10 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body id="main_body">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="#">WorkPlace</a>
-        <%= render partial: "shared/navbar", locals: { workplace: @workplace } if @workplace  %>
-      </div>
-    </div>
-  </div>
-	<div id="main_container" class="container">
+<body id="wedding_body">
+	<div class="container">
     <div class="row">
 	    <div class="span12">
-        <%= render partial: "shared/flashes" if flash.present? %>
 				<%= yield %>
 	    </div>
     </div>

@@ -32,3 +32,46 @@
 		height: 80px;	
 	}
 }
+
+// wedding
+body#wedding_body {
+	#invite_wrap {
+		#text {
+			color: white;
+			text-align: center;
+			font-family: handwrite;
+			p#primary {
+				font-size: 110px;
+			}
+			p#secondary {
+				margin-top: 50px;
+				font-size: 27px;
+			}
+			#btn_calendar {
+				margin-top: 10px;
+			}
+		}
+	}
+	#pikame {
+		li {
+			display: none;
+		}
+	}
+	.pikachoose {
+		.pika-stage {
+			height: 350px;
+			background: inherit;
+			border: none;
+			padding: 0;
+		}
+		.pika-imgnav {
+			display: none !important;
+		}
+		.pika-textnav {
+			display: none !important;
+		}
+		.caption {
+			display: none !important;
+		}
+	}
+}

@@ -14,8 +14,17 @@
  *= require_tree .
  */
  
-body {
+body#main_body {
  	background-image: url(asset-path("retina_wood.png"));
+}
+
+body#wedding_body {
+ 	background-image: url(asset-path("dark_wall.png"));
+}
+
+@font-face {
+  font-family: handwrite;
+  src: url(font-path('hand_write.ttf'));
 }
 
 .wrapper {
