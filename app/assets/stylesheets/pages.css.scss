@@ -43,9 +43,14 @@ body#wedding_body {
 			font-family: handwrite;
 			p#primary {
 				font-size: 110px;
+				margin-top: 30px;
 			}
 			p#secondary {
+				margin-top: 30px;
 				font-size: 27px;
+			}
+			.addthisevent-drop {
+				margin-top: 15px;
 			}
 		}
 	}
@@ -55,8 +60,12 @@ body#wedding_body {
 		}
 	}
 	.pikachoose {
+		width: 100%;
+		.pika-thumbs {
+			height: 0;
+		}
 		.pika-stage {
-			height: 350px;
+			width: inherit;
 			background: inherit;
 			border: none;
 			padding: 0;
