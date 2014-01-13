@@ -32,6 +32,9 @@ gem 'jquery-ui-rails'
 #web server
 gem "passenger"
 
+# 
+gem 'newrelic_rpm'
+
 group :development do
 	gem 'pry'
 end

@@ -74,6 +74,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.4)
+    newrelic_rpm (3.7.1.182)
     orm_adapter (0.5.0)
     passenger (4.0.33)
       daemon_controller (>= 1.1.0)
@@ -161,6 +162,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   less-rails
+  newrelic_rpm
   passenger
   pg
   pry
