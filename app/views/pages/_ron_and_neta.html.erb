@@ -46,7 +46,10 @@
 	$(document).ready(
 		function (){
 			$("#pikame").PikaChoose();
-			$("#jquery_jplayer_1").jPlayer({
+		});
+	$(window).load(
+    function() {
+    	$("#jquery_jplayer_1").jPlayer({
         ready: function() {
           $(this).jPlayer("setMedia", {
             mp3: "https://s3-eu-west-1.amazonaws.com/wedding-assets-static/wedding_song.mp3"
