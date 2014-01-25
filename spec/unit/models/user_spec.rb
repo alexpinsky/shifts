@@ -70,21 +70,43 @@ describe User do
 		end
 
 		describe "update_with_roles" do
-
-
+			let!(:user) {
+				u = User.make!
+				workplace.add_employee(u)
+				u
+			}
+			
 			context "when the user update succeed" do
+				let(:user_params) { { first_name: Faker::Name.first_name } }
+
+				it "should update the user attributes" do
+
+				end
 
 				context "when the roles update succeed" do
 
+					it "should add the new roles" do
+
+					end
+
+					context "when the user had different roles before the update" do
+
+						it "should remove the old roles from the user" do
+
+						end
+					end
 				end
 
 				context "when the roles update fails" do
 
+					it "should not update the user attributes" do
+
+					end
+
+					it "should not assign the user with the new roles" do
+
+					end
 				end
-			end
-
-			context "when the user update fails" do
-
 			end
 		end
 	end
