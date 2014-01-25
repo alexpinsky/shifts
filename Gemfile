@@ -30,10 +30,20 @@ gem 'twitter-bootstrap-rails', "~> 2.2.8"
 gem 'jquery-ui-rails'
 
 #web server
-gem "passenger"
+gem "unicorn"
 
 # 
 gem 'newrelic_rpm'
+
+gem 'faker'
+
+group :test do
+	gem 'rspec-rails', '~> 3.0.0.beta'
+	gem 'mocha'
+	gem 'machinist', '>= 2.0.0.beta2'
+	gem 'spork-rails'
+	gem 'test_after_commit'
+end
 
 group :development do
 	gem 'pry'

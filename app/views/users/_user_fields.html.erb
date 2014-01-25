@@ -1,0 +1,12 @@
+<div id="user_details" class="span3">
+	<h3>Employe Details</h3>
+	<%= f.inputs do %>
+		<%= f.input :first_name, label: false, placeholder: 'first name' %>
+		<%= f.input :last_name, label: false, placeholder: 'last name' %>
+		<%= f.input :email, label: false, placeholder: 'email' %>
+</div>
+<div id="user_roles" class="span3">
+	<h3>Employe Roles</h3>
+		<%= f.input :roles, as: :check_boxes, collection: @roles, label: false %>
+	<% end %>
+</div>

@@ -1,17 +1,6 @@
 <div id="user_form" class="wrapper offset2 span7">
-	<div id="user_details" class="span3">
-	<h3>Employe Details</h3>
 	<%= semantic_form_for [@workplace, @user] do |f| %>
-		<%= f.inputs do %>
-			<%= f.input :first_name, label: false, placeholder: 'first name' %>
-			<%= f.input :last_name, label: false, placeholder: 'last name' %>
-			<%= f.input :email, label: false, placeholder: 'email' %>
-	</div>
-	<div id="user_roles" class="span3">
-	<h3>Employe Roles</h3>
-			<%= f.input :roles, as: :check_boxes, collection: @roles, label: false %>
-	</div>
-		<% end %>
+		<%= render partial: "user_fields", locals: { f: f } %>
 	<div id="user_actions" class="span7">
 		<%= f.actions do %>
 			<%= f.action :submit, label: 'Create', button_html: { class: "btn btn-success" } %>

@@ -10,7 +10,7 @@ class RolesController < ApplicationController
 	end
 
 	def create
-		@role = @workplace.roles.new params[:role]
+		@role = @workplace.roles.new role_params
 		if @role.save
 			redirect_to workplace_roles_path, notice: "Role created successfully"
 		else
@@ -24,7 +24,7 @@ class RolesController < ApplicationController
 
 	def update
 		@role = @workplace.roles.find params[:id]
-		if @role.update_attributes params[:role]
+		if @role.update_attributes role_params
 			redirect_to workplace_roles_path, notice: "Role update successfully"
 		else
 			render :edit, error: @role.errors.full_messages
@@ -38,5 +38,11 @@ class RolesController < ApplicationController
 		else
 			redirect_to workplace_roles_path, error: @role.errors.full_messages
 		end		
+	end
+
+private
+	
+	def role_params
+		params.require(:role).permit(:name)
 	end
 end
